@@ -21,12 +21,14 @@ const List = ({ state }) => {
         <Header>Author: {state.source.author[data.id].name}</Header>
       )}
 
-      {/* Iterate over the items of the list. */}
-      {data.items.map(({ type, id }) => {
-        const item = state.source[type][id];
-        // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
-      })}
+      <Items>
+        {/* Iterate over the items of the list. */}
+        {data.items.map(({ type, id }) => {
+          const item = state.source[type][id];
+          // Render one Item component for each one.
+          return <Item key={item.id} item={item} />;
+        })}
+      </Items>
       <Pagination />
     </Container>
   );
@@ -37,10 +39,11 @@ export default connect(List);
 const Container = styled.section`
   margin: 0;
   padding: 24px;
-  list-style: none;
 `;
 
 const Header = styled.h3`
   font-weight: 300;
   text-transform: capitalize;
 `;
+
+const Items = styled.div``;

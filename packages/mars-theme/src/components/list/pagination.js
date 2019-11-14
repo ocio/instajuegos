@@ -27,7 +27,7 @@ const Pagination = ({ state, actions, libraries }) => {
   }, []);
 
   return (
-    <div>
+    <Container>
       {isThereNextPage && (
         <Link link={nextPageLink}>
           <Text>← Older posts</Text>
@@ -39,13 +39,17 @@ const Pagination = ({ state, actions, libraries }) => {
           <Text>Newer posts →</Text>
         </Link>
       )}
-    </div>
+    </Container>
   );
 };
 
 export default connect(Pagination);
 
+const Container = styled.div`
+  clear: left;
+`;
+
 const Text = styled.em`
-  display: inline-block;
-  margin-top: 16px;
+  display: block;
+  margin: 10px 15px;
 `;
