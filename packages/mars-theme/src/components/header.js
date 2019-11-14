@@ -7,19 +7,16 @@ const Header = ({ state }) => (
   <>
     <Container>
       <StyledLink link="/">
-        <Title>{state.frontity.title}</Title>
+        <Title>InstaJuegos.io</Title>
       </StyledLink>
-      <Description>{state.frontity.description}</Description>
     </Container>
-    <Nav />
+    {/* <Nav /> */}
   </>
 );
 
 export default connect(Header);
 
 const Container = styled.div`
-  width: 848px;
-  max-width: 100%;
   box-sizing: border-box;
   padding: 24px;
   color: #fff;

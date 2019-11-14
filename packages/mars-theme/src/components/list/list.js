@@ -35,7 +35,6 @@ const List = ({ state }) => {
 export default connect(List);
 
 const Container = styled.section`
-  width: 800px;
   margin: 0;
   padding: 24px;
   list-style: none;
@@ -44,5 +43,4 @@ const Container = styled.section`
 const Header = styled.h3`
   font-weight: 300;
   text-transform: capitalize;
-  color: rgba(12, 17, 43, 0.9);
 `;
