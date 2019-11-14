@@ -16,6 +16,10 @@ const Theme = ({ state }) => {
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
+      <link
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700"
+        rel="stylesheet"
+      ></link>
       <Title />
       <Head>
         <meta name="description" content={state.frontity.description} />
@@ -47,11 +51,12 @@ export default connect(Theme);
 
 const globalStyles = css`
   body {
-    background: #32323e;
-    color: white;
+    background: white;
+    color: rgb(51, 51, 51);
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
   }
   a,
   a:visited {
@@ -64,7 +69,7 @@ const HeadContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #282830;
+  border-bottom: 2px solid #efefef;
 `;
 
 const Main = styled.div``;

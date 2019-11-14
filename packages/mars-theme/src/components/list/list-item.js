@@ -43,16 +43,18 @@ const Item = ({ state, item }) => {
   }
 
   return (
-    <Container>
-      <PictureContainer onMouseEnter={playVideo} onMouseLeave={stopVideo}>
-        <Image src={item.thumbnail_image} />
-        <VideoContainer ref={videocontainer} />
-        {/* <Video ref={video} autoPlay muted loop playsInline>
+    <Link link={item.link}>
+      <Container onMouseEnter={playVideo} onMouseLeave={stopVideo}>
+        <PictureContainer>
+          <Image src={item.thumbnail_image} />
+          <VideoContainer ref={videocontainer} />
+          {/* <Video ref={video} autoPlay muted loop playsInline>
         <source ref={mp4} type="video/mp4" />
       </Video> */}
-      </PictureContainer>
-      <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-    </Container>
+        </PictureContainer>
+        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+      </Container>
+    </Link>
   );
 };
 
@@ -61,8 +63,15 @@ export default connect(Item);
 const Container = styled.div`
   margin: 10px;
   float: left;
+  background: #f1f1f1;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  /* box-shadow: 0px 0px 23px 6px; */
 `;
+
 const PictureContainer = styled.div`
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
   width: ${width}px;
@@ -71,7 +80,11 @@ const PictureContainer = styled.div`
   border: 5px solid white;
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+  padding-top: 10px;
+  font-weight: bold;
+  text-align: left;
+`;
 
 const VideoContainer = styled.div`
   display: none;
