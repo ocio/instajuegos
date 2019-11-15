@@ -27,6 +27,19 @@ const Header = ({ state }) => {
     setSearch(e.target.value);
   }
 
+  function onFullScreen() {
+    const element = document.getElementById("iframe");
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
+  }
+
   return (
     <>
       <Container>
@@ -50,7 +63,7 @@ const Header = ({ state }) => {
           />
         </Search>
         {data.isPostType ? (
-          <ButtonIcon>
+          <ButtonIcon onClick={onFullScreen}>
             <img src="/static/images/fullscreen.png" />
           </ButtonIcon>
         ) : null}

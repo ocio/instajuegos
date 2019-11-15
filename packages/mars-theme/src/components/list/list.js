@@ -22,12 +22,14 @@ const List = ({ state }) => {
       )}
 
       <Items>
-        {/* Iterate over the items of the list. */}
-        {data.items.map(({ type, id }) => {
-          const item = state.source[type][id];
-          // Render one Item component for each one.
-          return <Item key={item.id} item={item} />;
-        })}
+        <div>
+          {/* Iterate over the items of the list. */}
+          {data.items.map(({ type, id }) => {
+            const item = state.source[type][id];
+            // Render one Item component for each one.
+            return <Item key={item.id} item={item} />;
+          })}
+        </div>
       </Items>
       <Pagination />
     </Container>
@@ -45,4 +47,11 @@ const Header = styled.h3`
   text-transform: capitalize;
 `;
 
-const Items = styled.div``;
+const Items = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  & > div {
+    flex: 1;
+  }
+`;
