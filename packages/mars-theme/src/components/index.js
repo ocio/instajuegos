@@ -63,6 +63,4 @@ const globalStyles = css`
   }
 `;
 
-const Content = styled.div`
-  padding-top: 100px;
-`;
+const Content = styled.div``;

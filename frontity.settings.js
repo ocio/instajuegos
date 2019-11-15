@@ -7,11 +7,11 @@ const settings = {
       state: {
         theme: {
           menu: [
-            ["Home", "/"],
-            ["Nature", "/category/nature/"],
-            ["Travel", "/category/travel/"],
-            ["Japan", "/tag/japan/"],
-            ["About Us", "/about-us/"]
+            ["Todos", "/"],
+            ["Nuevos", "/tag/nuevos/"],
+            ["Mas Populares", "/tag/populares/"],
+            ["Disparos", "/tag/disparos/"],
+            ["Moomoo", "/tag/moomoo/"]
           ],
           featured: {
             showOnList: false,

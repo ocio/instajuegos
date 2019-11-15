@@ -2,54 +2,56 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 
-const Nav = ({ state }) => (
-  <Container>
-    {state.theme.menu.map(([name, link]) => (
-      <Item key={name} isSelected={state.router.link === link}>
-        <Link link={link}>{name}</Link>
-      </Item>
-    ))}
-  </Container>
-);
+const Nav = ({ state }) => {
+  console.log("Nav");
+  return (
+    <Container>
+      {state.theme.menu.map(([name, link]) => (
+        <Item key={name} isSelected={state.router.link === link}>
+          <Link link={link}>{name}</Link>
+        </Item>
+      ))}
+    </Container>
+  );
+};
 
 export default connect(Nav);
 
 const Container = styled.nav`
-  list-style: none;
+  position: fixed;
+  z-index: 1;
+  top: 69px;
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
-  max-width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 10px;
   margin: 0;
   overflow-x: auto;
 `;
 
 const Item = styled.div`
-  padding: 0;
-  margin: 0 16px;
-  color: #fff;
-  font-size: 0.9em;
+  outline: none;
+  padding: 2px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: ${({ isSelected }) => (isSelected ? "#333" : "#8e8e8e")};
   box-sizing: border-box;
-  flex-shrink: 0;
+  background-color: ${({ isSelected }) =>
+    isSelected ? "#eee" : "transparent"};
 
   & > a {
+    outline: none;
     display: inline-block;
     line-height: 2em;
-    border-bottom: 2px solid
-      ${({ isSelected }) => (isSelected ? "#fff" : "transparent")};
   }
 
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 24px;
-    }
+  & > a:hover {
+    color: #333;
+    text-decoration: underline;
   }
 `;

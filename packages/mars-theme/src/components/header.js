@@ -4,16 +4,23 @@ import Link from "./link";
 import Nav from "./nav";
 
 const Header = ({ state }) => {
-  const [search, setSearch] = useState("");
+  const data = state.source.get(state.router.link);
+  const splitted = state.router.link.split("s=");
+  const searchvalue = splitted[1] || "";
+  const [search, setSearch] = useState(searchvalue);
 
-  useEffect(() => {
-    setSearch(location.search.slice(3));
-  }, []);
+  // useEffect(() => {
+  //   setSearch(searchvalue);
+  // }, []);
 
   function onKeyPress(e) {
     if (e.key === "Enter") {
       location.href = "/?s=" + search;
     }
+  }
+
+  function onClickBack(e) {
+    history.back();
   }
 
   function onChange(e) {
@@ -23,9 +30,11 @@ const Header = ({ state }) => {
   return (
     <>
       <Container>
-        {/* <ButtonIcon>
-          <img src="/static/images/back.png" />
-        </ButtonIcon> */}
+        {data.isPostType ? (
+          <ButtonIcon onClick={onClickBack}>
+            <img src="/static/images/back.png" />
+          </ButtonIcon>
+        ) : null}
         <Link link="/">
           <ButtonIcon>
             <img src="/static/images/logo.png" />
@@ -40,11 +49,13 @@ const Header = ({ state }) => {
             onKeyPress={onKeyPress}
           />
         </Search>
-        {/* <ButtonIcon>
-          <img src="/static/images/fullscreen.png" />
-        </ButtonIcon> */}
+        {data.isPostType ? (
+          <ButtonIcon>
+            <img src="/static/images/fullscreen.png" />
+          </ButtonIcon>
+        ) : null}
       </Container>
-      {/* <Nav /> */}
+      {data.isPostType ? null : <Nav />}
     </>
   );
 };
