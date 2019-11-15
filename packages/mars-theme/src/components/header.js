@@ -1,20 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
 
 const Header = ({ state }) => {
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setSearch(location.search.slice(3));
+  }, []);
+
+  function onKeyPress(e) {
+    if (e.key === "Enter") {
+      location.href = "/?s=" + search;
+    }
+  }
+
+  function onChange(e) {
+    setSearch(e.target.value);
+  }
+
   return (
     <>
       <Container>
         {/* <ButtonIcon>
           <img src="/static/images/back.png" />
         </ButtonIcon> */}
-        <ButtonIcon>
-          <img src="/static/images/logo.png" />
-        </ButtonIcon>
+        <Link link="/">
+          <ButtonIcon>
+            <img src="/static/images/logo.png" />
+          </ButtonIcon>
+        </Link>
         <Search>
-          <Input type="text" placeholder="Busca un juego..." />
+          <Input
+            type="text"
+            value={search}
+            placeholder="Busca un juego..."
+            onChange={onChange}
+            onKeyPress={onKeyPress}
+          />
         </Search>
         {/* <ButtonIcon>
           <img src="/static/images/fullscreen.png" />
