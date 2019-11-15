@@ -1,6 +1,10 @@
 const settings = {
   name: "TusJuegos.io",
-  state: {},
+  state: {
+    title: "Tus Juegos IO",
+    description:
+      "Tus Juegos IO cada dia. Ingresa y juega a los últimos juegos io, puedes buscar en diferentes categorías, suscribite para recibir alertas cuando se publiquen nuevos juegos io, chatea con tus amigos y mucho más. ¡Tenemos la lista más completa y cada día añadimos más juegos, ingresa y divertete! :)"
+  },
   packages: [
     {
       name: "@frontity/mars-theme",

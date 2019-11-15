@@ -21,8 +21,8 @@ const Theme = ({ state }) => {
       ></link>
       <Title />
       <Head>
-        <meta name="description" content={state.frontity.description} />
-        <html lang="en" />
+        <meta name="description" content={state.description} />
+        <html lang="es" />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
