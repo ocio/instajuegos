@@ -38,7 +38,6 @@ export default connect(List);
 
 const Container = styled.section`
   margin: 0;
-  padding: 24px;
 `;
 
 const Header = styled.h3`

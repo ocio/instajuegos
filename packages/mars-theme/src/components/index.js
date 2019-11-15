@@ -12,7 +12,6 @@ import Title from "./title";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
@@ -31,18 +30,16 @@ const Theme = ({ state }) => {
       <Global styles={globalStyles} />
 
       {/* Add the header of the site. */}
-      <HeadContainer>
-        <Header />
-      </HeadContainer>
+      <Header />
 
       {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
-      <Main>
+      <Content>
         {(data.isFetching && <Loading />) ||
           (data.isArchive && <List />) ||
           (data.isPostType && <Post />) ||
           (data.is404 && <Page404 />)}
-      </Main>
+      </Content>
     </>
   );
 };
@@ -54,9 +51,10 @@ const globalStyles = css`
     background: white;
     color: rgb(51, 51, 51);
     margin: 0;
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Helvetica, Arial,
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      Helvetica, Meiryo, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+      Segoe UI Symbol;
   }
   a,
   a:visited {
@@ -65,11 +63,6 @@ const globalStyles = css`
   }
 `;
 
-const HeadContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-bottom: 2px solid #efefef;
+const Content = styled.div`
+  padding-top: 100px;
 `;
-
-const Main = styled.div``;

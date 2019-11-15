@@ -88,7 +88,7 @@ const Title = styled.div`
 
 const VideoContainer = styled.div`
   display: none;
-  background: url("/static/images/loading.svg") no-repeat center center / 30px
+  background: url("/static/images/loading.gif") no-repeat center center / 30px
     30px rgba(255, 255, 255, 0.1);
   position: absolute;
   width: 100%;

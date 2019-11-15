@@ -67,7 +67,6 @@ export default connect(Post);
 
 const Container = styled.div`
   margin: 0;
-  padding: 24px;
 `;
 
 const Title = styled.h1`

@@ -12,7 +12,6 @@ export default Loading;
 
 const Container = styled.div`
   margin: 0;
-  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;

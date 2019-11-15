@@ -1,12 +1,6 @@
 const settings = {
-  name: "instajuegos",
-  state: {
-    frontity: {
-      url: "https://test.frontity.io",
-      title: "Test Frontity Blog",
-      description: "WordPress installation for Frontity development"
-    }
-  },
+  name: "TusJuegos.io",
+  state: {},
   packages: [
     {
       name: "@frontity/mars-theme",

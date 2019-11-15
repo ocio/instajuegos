@@ -17,7 +17,6 @@ export default Page404;
 
 const Container = styled.div`
   margin: 0;
-  padding: 24px;
   text-align: center;
 `;
 
