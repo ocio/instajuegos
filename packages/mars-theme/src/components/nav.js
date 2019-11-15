@@ -3,7 +3,6 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 
 const Nav = ({ state }) => {
-  console.log("Nav");
   return (
     <Container>
       {state.theme.menu.map(([name, link]) => (

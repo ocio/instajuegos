@@ -3,15 +3,19 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
 
-const width = 200;
-const height = 114;
+const width = 275;
+const height = 158;
 
 const Item = ({ state, item }) => {
   // const author = state.source.author[item.author];
   // const date = new Date(item.date);
 
+
+
   const videocontainer = useRef(null);
   const element = useMemo(() => ({}));
+  const tag = state.source.tag
+  const tags = item.tags.map(id=>tag[id].name).join(', ')
 
   function playVideo() {
     if (typeof item.thumbnail_video === "string") {
@@ -52,7 +56,10 @@ const Item = ({ state, item }) => {
         <source ref={mp4} type="video/mp4" />
       </Video> */}
         </PictureContainer>
-        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+        <Text>
+          <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+          <Tag>{tags}</Tag>
+        </Text>
       </Container>
     </Link>
   );
@@ -64,27 +71,43 @@ const Container = styled.div`
   margin: 10px;
   float: left;
   background: #f1f1f1;
-  border-radius: 20px;
-  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom:0;
   cursor: pointer;
+  &:hover {
+    background: white;
+    border: 1px solid #f1f1f1;
+  }
   /* box-shadow: 0px 0px 23px 6px; */
 `;
 
 const PictureContainer = styled.div`
-  border-radius: 10px;
+  border-radius: 7px;
+  border: 2px solid white;
   position: relative;
   overflow: hidden;
   width: ${width}px;
   height: ${height}px;
   background-image: url(${p => p.image});
-  border: 5px solid white;
 `;
 
+const Text = styled.div`
+  padding: 12px 10px 15px 10px;
+`
+
+
 const Title = styled.div`
-  padding-top: 10px;
-  font-weight: bold;
-  text-align: left;
+  font-weight: 700;
+  font-size: 21px;
 `;
+
+const Tag = styled.div`
+  font-weight: 400;
+  font-size: 14px;
+`
+
 
 const VideoContainer = styled.div`
   display: none;
