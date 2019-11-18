@@ -1,23 +1,29 @@
 {
-  "name": "instajuegos",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Frontity project",
-  "keywords": [
-    "frontity"
-  ],
-  "scripts": {
-    "dev": "frontity dev",
-    "build": "frontity build",
-    "serve": "frontity serve"
-  },
-  "prettier": {},
-  "dependencies": {
-    "frontity": "^1.4.2",
-    "@frontity/core": "^1.4.0",
-    "@frontity/wp-source": "^1.4.2",
-    "@frontity/tiny-router": "^1.0.17",
-    "@frontity/html2react": "^1.1.14",
-    "@frontity/mars-theme": "./packages/mars-theme"
-  }
+    "name": "instajuegos",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Frontity project",
+    "keywords": [
+        "frontity"
+    ],
+    "scripts": {
+        "dev": "frontity dev",
+        "build": "frontity build",
+        "serve": "frontity serve"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": true
+    },
+    "dependencies": {
+        "frontity": "^1.4.2",
+        "@frontity/core": "^1.4.0",
+        "@frontity/wp-source": "^1.4.2",
+        "@frontity/tiny-router": "^1.0.17",
+        "@frontity/html2react": "^1.1.14",
+        "@frontity/mars-theme": "./packages/mars-theme"
+    }
 }

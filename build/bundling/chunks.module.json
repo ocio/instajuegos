@@ -1,0 +1,111 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.2",
+  "hash": "5d90c8f4991253035f44",
+  "publicPath": "/static/",
+  "outputPath": "/mnt/c/Users/enzo/drive/projects/tusjuegos/build/static",
+  "assetsByChunkName": {
+    "TusJuegos.io": "TusJuegos.io.module.js",
+    "list": [
+      "list.module.js",
+      "list.9e66a0049c06c65d6cfe.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "9e66a0049c06c65d6cfe.hot-update.json",
+      "size": 46,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "TusJuegos.io.module.js",
+      "size": 5277663,
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "chunkNames": [
+        "TusJuegos.io"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "list.9e66a0049c06c65d6cfe.hot-update.js",
+      "size": 16479,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 93627,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "TusJuegos.io": {
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "assets": [
+        "TusJuegos.io.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "TusJuegos.io": {
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "assets": [
+        "TusJuegos.io.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js",
+        "list.9e66a0049c06c65d6cfe.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
