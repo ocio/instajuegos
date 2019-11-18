@@ -19,6 +19,10 @@ const Theme = ({ state }) => {
                 href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700"
                 rel="stylesheet"
             ></link>
+            <script
+                type="text/javascript"
+                src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dd2844d726710ce"
+            ></script>
             <Title />
             <Head>
                 <meta name="description" content={state.description} />

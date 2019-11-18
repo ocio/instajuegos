@@ -12,14 +12,16 @@ const List = ({ state }) => {
             {/* If the list is a taxonomy, we render a title. */}
             {data.isTaxonomy && (
                 <Header>
-                    {data.taxonomy}: {state.source[data.taxonomy][data.id].name}
+                    <HeaderTop>{data.taxonomy}</HeaderTop>
+                    <HeaderBottom>
+                        {state.source[data.taxonomy][data.id].name}
+                    </HeaderBottom>
                 </Header>
             )}
 
-            {/* If the list is an author, we render a title. */}
-            {data.isAuthor && (
+            {/* {data.isAuthor && (
                 <Header>Author: {state.source.author[data.id].name}</Header>
-            )}
+            )} */}
 
             <Items>
                 <div>
@@ -55,8 +57,21 @@ const Container = styled.section`
     }
 `
 
-const Header = styled.h3`
-    font-weight: 300;
+const Header = styled.div`
+    padding: 0 25px;
+`
+
+const HeaderTop = styled.div`
+    font-weight: 100;
+    color: #42f68c;
+    text-transform: capitalize;
+    line-height: 12px;
+`
+
+const HeaderBottom = styled.div`
+    font-size: 50px;
+    line-height: 53px;
+    color: #45ff91;
     text-transform: capitalize;
 `
 

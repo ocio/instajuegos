@@ -2,6 +2,7 @@ import React, { useRef, useMemo } from 'react'
 import { connect, styled } from 'frontity'
 import Link from '../link'
 import FeaturedMedia from '../featured-media'
+import loadingIco from '../../../../../static/images/loading.gif'
 
 const width = 250
 const height = 144
@@ -112,8 +113,8 @@ const Tag = styled.div`
 
 const VideoContainer = styled.div`
     display: none;
-    background: url('/static/images/loading.gif') no-repeat center center / 30px
-        30px rgba(255, 255, 255, 0.1);
+    background: url(${loadingIco}) no-repeat center center / 30px 30px
+        rgba(255, 255, 255, 0.1);
     position: absolute;
     width: 100%;
     height: 100%;

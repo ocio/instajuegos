@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { connect, styled } from 'frontity'
 import Link from './link'
 import Nav from './nav'
+import logoIco from '../../../../static/images/logo.png'
+import backIco from '../../../../static/images/back.png'
+import searchIco from '../../../../static/images/search.png'
+import fullscreenIco from '../../../../static/images/fullscreen.png'
 
 const Header = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -45,12 +49,12 @@ const Header = ({ state }) => {
             <Container>
                 {data.isPostType ? (
                     <ButtonIcon onClick={onClickBack}>
-                        <img src="/static/images/back.png" />
+                        <img src={backIco} />
                     </ButtonIcon>
                 ) : null}
                 <Link link="/">
                     <ButtonIcon>
-                        <img src="/static/images/logo.png" />
+                        <img src={logoIco} />
                     </ButtonIcon>
                 </Link>
                 <Search>
@@ -64,7 +68,7 @@ const Header = ({ state }) => {
                 </Search>
                 {data.isPostType ? (
                     <ButtonIcon onClick={onFullScreen}>
-                        <img src="/static/images/fullscreen.png" />
+                        <img src={fullscreenIco} />
                     </ButtonIcon>
                 ) : null}
             </Container>
@@ -113,7 +117,7 @@ const Search = styled.div`
 
 const Input = styled.input`
     color: #333;
-    background: url(/static/images/search.png) no-repeat 10px center #efefef;
+    background: url(${searchIco}) no-repeat 10px center #efefef;
     border: 0;
     border-radius: 10px;
     height: 40px;
