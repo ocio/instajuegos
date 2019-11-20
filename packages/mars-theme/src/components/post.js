@@ -41,17 +41,19 @@ const Post = ({ state, actions, libraries }) => {
                 allowfullscreen=""
                 src={post.url_main}
             />
-            <Content>
-                <Tags>
-                    <TagTitle>Categorías</TagTitle>
-                    <br />
-                    {tags}
-                </Tags>
-                <Description>
-                    <DescriptionTitle>Descripción</DescriptionTitle>
-                    <Html2React html={post.content.rendered} />
-                </Description>
-            </Content>
+            <ContentWrap>
+                <Content>
+                    <Tags>
+                        <TagTitle>Categorías</TagTitle>
+                        <br />
+                        {tags}
+                    </Tags>
+                    <Description>
+                        <DescriptionTitle>Descripción</DescriptionTitle>
+                        <Html2React html={post.content.rendered} />
+                    </Description>
+                </Content>
+            </ContentWrap>
             <Share>
                 <div class="addthis_inline_share_toolbox"></div>
             </Share>
@@ -74,9 +76,13 @@ const Iframe = styled.iframe`
     background-color: #000;
 `
 
+const ContentWrap = styled.div`
+    max-width: 900px;
+    margin: 30px auto;
+`
+
 const Content = styled.div`
-    width: 900px;
-    margin: 50px auto;
+    margin: 20px;
     border: 5px solid #45ff91;
     border-radius: 10px;
     padding: 20px;

@@ -11,6 +11,7 @@ import Title from './title'
 // in roots.
 const Theme = ({ state }) => {
     useEffect(() => {
+        console.log('Loading analytics')
         window.dataLayer = window.dataLayer || []
         function gtag() {
             dataLayer.push(arguments)
