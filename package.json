@@ -10,7 +10,7 @@
         "dev": "frontity dev",
         "build": "frontity build",
         "serve": "frontity serve",
-        "forever": "forever start -c \"npm run serve\" frontity"
+        "forever": "forever start -c \"npm run serve\" ./"
     },
     "prettier": {
         "printWidth": 80,

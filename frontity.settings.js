@@ -29,7 +29,7 @@ const settings = {
                     api:
                         // "https://public-api.wordpress.com/wp/v2/sites/instajuegos.home.blog/posts/"
                         // "https://test.frontity.io/wp-json"
-                        'http://blog.tusjuegos.io/wp-json/',
+                        'https://blog.tusjuegos.io/wp-json/',
 
                     params: {
                         per_page: 50,
