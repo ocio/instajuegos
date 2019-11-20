@@ -1,14 +1,28 @@
 server {
+    listen         80;
+    server_name    tusjuegos.io www.tusjuegos.io;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_buffering off;
+    }
+}
+
+
+server {
     listen 80;
-    server_name tusjuegos.io;
+    server_name blog.tusjuegos.io;
 
     location / {
         root /home/ubuntu/tusjuegos/wordpress/;
         index index.php;
         try_files $uri $uri/ /index.php?q=$uri&$args;
 
-        access_log /home/ubuntu/tusjuegos/access.log;
-        error_log /home/ubuntu/tusjuegos/error.log;
+        #access_log /home/ubuntu/tusjuegos/access.log;
+        #error_log /home/ubuntu/tusjuegos/error.log;
 
         location ~* \.php$ {
             fastcgi_pass unix:/run/php/php7.2-fpm.sock;
