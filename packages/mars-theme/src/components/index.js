@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Global, css, connect, styled, Head } from 'frontity'
 import Header from './header'
 import List from './list'
@@ -10,6 +10,15 @@ import Title from './title'
 // Theme is the root React component of our theme. The one we will export
 // in roots.
 const Theme = ({ state }) => {
+    useEffect(() => {
+        window.dataLayer = window.dataLayer || []
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        gtag('js', new Date())
+        gtag('config', 'G-J98W8Y5D1F')
+    }, [])
+
     // Get information about the current URL.
     const data = state.source.get(state.router.link)
     return (
@@ -22,6 +31,10 @@ const Theme = ({ state }) => {
             <script
                 type="text/javascript"
                 src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dd2844d726710ce"
+            ></script>
+            <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-J98W8Y5D1F"
             ></script>
             <Title />
             <Head>
