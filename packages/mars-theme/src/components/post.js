@@ -13,7 +13,7 @@ const Post = ({ state, actions, libraries }) => {
     const author = state.source.author[post.author]
     // Get a human readable date.
     const date = new Date(post.date)
-
+    console.log(post)
     // Get the html2react component.
     const Html2React = libraries.html2react.Component
 
@@ -48,6 +48,7 @@ const Post = ({ state, actions, libraries }) => {
                         <br />
                         {tags}
                     </Tags>
+                    <Title>{post.title.rendered}</Title>
                     <Description>
                         <DescriptionTitle>Descripción</DescriptionTitle>
                         <Html2React html={post.content.rendered} />
@@ -90,11 +91,16 @@ const Content = styled.div`
 const Tags = styled.div`
     text-align: center;
 `
+const Title = styled.h1`
+    font-size: 40px;
+    font-weight: bold;
+    color: #45ff91;
+`
+
 const Description = styled.div``
 const DescriptionTitle = styled.div`
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 100;
-    color: #45ff91;
 `
 
 const TagTitle = styled.div`

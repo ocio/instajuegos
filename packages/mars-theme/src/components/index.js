@@ -22,6 +22,13 @@ const Theme = ({ state }) => {
 
     // Get information about the current URL.
     const data = state.source.get(state.router.link)
+
+    let description = state.description
+    if (data.isPostType) {
+        // Get the data of the post.
+        description = state.source[data.type][data.id].short_description
+    }
+
     return (
         <>
             {/* Add some metatags to the <head> of the HTML. */}
@@ -39,7 +46,7 @@ const Theme = ({ state }) => {
             ></script>
             <Title />
             <Head>
-                <meta name="description" content={state.description} />
+                <meta name="description" content={description} />
                 <html lang="es" />
             </Head>
 
