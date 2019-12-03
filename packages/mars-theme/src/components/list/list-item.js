@@ -79,6 +79,8 @@ const Container = styled.div`
     padding: 10px;
     padding-bottom: 0;
     cursor: pointer;
+    width: 250px;
+    height: 235px;
     &:hover {
         background: #45ff91;
         border: 1px solid #45ff91;
