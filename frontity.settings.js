@@ -13,7 +13,8 @@ const settings = {
                     menu: [
                         ['Todos', '/'],
                         ['Nuevos', '/tag/nuevos/'],
-                        ['Mas Populares', '/tag/populares/']
+                        ['Mas Populares', '/tag/populares/'],
+                        ['Blog', 'https://blog.tusjuegos.io/category/articulo/']
                     ],
                     featured: {
                         showOnList: false,

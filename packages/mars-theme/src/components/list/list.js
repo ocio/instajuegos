@@ -26,11 +26,16 @@ const List = ({ state }) => {
             <Items>
                 <div>
                     {/* Iterate over the items of the list. */}
-                    {data.items.map(({ type, id }) => {
-                        const item = state.source[type][id]
-                        // Render one Item component for each one.
-                        return <Item key={item.id} item={item} />
-                    })}
+                    {data.items
+                        .filter(({ type, id }) => {
+                            const item = state.source[type][id]
+                            return item.categories[0] === 1
+                        })
+                        .map(({ type, id }) => {
+                            const item = state.source[type][id]
+                            // Render one Item component for each one.
+                            return <Item key={item.id} item={item} />
+                        })}
                 </div>
             </Items>
             <Pagination />
