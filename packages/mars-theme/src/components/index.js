@@ -17,7 +17,7 @@ const Theme = ({ state }) => {
             dataLayer.push(arguments)
         }
         gtag('js', new Date())
-        gtag('config', 'G-J98W8Y5D1F')
+        gtag('config', 'UA-154433373-1')
     }, [])
 
     // Get information about the current URL.
@@ -42,7 +42,7 @@ const Theme = ({ state }) => {
             ></script>
             <script
                 async
-                src="https://www.googletagmanager.com/gtag/js?id=G-J98W8Y5D1F"
+                src="https://www.googletagmanager.com/gtag/js?id=UA-154433373-1"
             ></script>
             <Title />
             <Head>
