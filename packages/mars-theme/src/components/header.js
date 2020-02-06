@@ -44,6 +44,14 @@ const Header = ({ state }) => {
         }
     }
 
+    let isGame = false
+    if (
+        data.isPostType &&
+        state.source[data.type][data.id].categories[0] === 1
+    ) {
+        isGame = true
+    }
+
     return (
         <>
             <Container>
@@ -66,7 +74,7 @@ const Header = ({ state }) => {
                         onKeyPress={onKeyPress}
                     />
                 </Search>
-                {data.isPostType ? (
+                {isGame ? (
                     <ButtonIcon onClick={onFullScreen}>
                         <img src={fullscreenIco} />
                     </ButtonIcon>

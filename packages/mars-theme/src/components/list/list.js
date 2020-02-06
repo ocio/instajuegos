@@ -76,7 +76,7 @@ const HeaderTop = styled.div`
 const HeaderBottom = styled.div`
     font-size: 50px;
     line-height: 53px;
-    color: #45ff91;
+    color: #3ae17e;
     text-transform: capitalize;
 `
 

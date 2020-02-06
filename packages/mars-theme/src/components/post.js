@@ -9,11 +9,6 @@ const Post = ({ state, actions, libraries }) => {
     const data = state.source.get(state.router.link)
     // Get the data of the post.
     const post = state.source[data.type][data.id]
-    // Get the data of the author.
-    const author = state.source.author[post.author]
-    // Get a human readable date.
-    const date = new Date(post.date)
-    // console.log(post)
     // Get the html2react component.
     const Html2React = libraries.html2react.Component
 
@@ -32,8 +27,21 @@ const Post = ({ state, actions, libraries }) => {
         </Tag>
     ))
 
+    const Component = post.categories[0] === 1 ? Game : Article
+
     // Load the post, but only if the data is ready.
     return data.isReady ? (
+        <Component
+            state={state}
+            post={post}
+            tags={tags}
+            Html2React={Html2React}
+        />
+    ) : null
+}
+
+function Game({ post, tags, Html2React }) {
+    return (
         <Container>
             <Iframe
                 id="iframe"
@@ -59,7 +67,51 @@ const Post = ({ state, actions, libraries }) => {
                 <div class="addthis_inline_share_toolbox"></div>
             </Share>
         </Container>
-    ) : null
+    )
+}
+
+var options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+}
+
+function Article({ state, post, tags, Html2React }) {
+    // Get the author.
+    const author = state.source.author[post.author]
+    // Get a date for humans.
+    const date = new Date(post.date)
+    return (
+        <Container>
+            <ContentWrap>
+                <Content>
+                    <Tags>{tags}</Tags>
+                    {post.featured_media != null && (
+                        <FeaturedMedia id={post.featured_media} />
+                    )}
+                    <AuthorDate>
+                        <Author>
+                            Por <b>{author.name}</b>,
+                        </Author>
+                        <Fecha>
+                            {' '}
+                            el{' '}
+                            <b>{date.toLocaleDateString('es-ES', options)}</b>
+                        </Fecha>
+                    </AuthorDate>
+                    <Title>{post.title.rendered}</Title>
+                    <Description>
+                        <Html2React html={post.content.rendered} />
+                    </Description>
+                </Content>
+            </ContentWrap>
+
+            <Share>
+                <div class="addthis_inline_share_toolbox"></div>
+            </Share>
+        </Container>
+    )
 }
 
 export default connect(Post)
@@ -78,13 +130,13 @@ const Iframe = styled.iframe`
 `
 
 const ContentWrap = styled.div`
-    max-width: 900px;
+    max-width: 1200px;
     margin: 30px auto;
 `
 
 const Content = styled.div`
     margin: 20px;
-    border: 5px solid #45ff91;
+    /* border: 5px solid #45ff91; */
     border-radius: 10px;
     padding: 20px;
 `
@@ -94,7 +146,7 @@ const Tags = styled.div`
 const Title = styled.h1`
     font-size: 40px;
     font-weight: bold;
-    color: #45ff91;
+    color: #3ae17e;
 `
 
 const Description = styled.div``
@@ -106,7 +158,7 @@ const DescriptionTitle = styled.div`
 const TagTitle = styled.div`
     font-size: 20px;
     font-weight: bold;
-    color: #45ff91;
+    color: #3ae17e;
 `
 
 const Tag = styled.div`
@@ -136,4 +188,20 @@ const Tag = styled.div`
 const Share = styled.div`
     text-align: center;
     margin-bottom: 30px;
+`
+
+const AuthorDate = styled.div`
+    color: grey;
+    font-size: 14px;
+    display: inline;
+`
+
+const Author = styled.p`
+    font-size: 0.9em;
+    display: inline;
+`
+
+const Fecha = styled.p`
+    font-size: 0.9em;
+    display: inline;
 `

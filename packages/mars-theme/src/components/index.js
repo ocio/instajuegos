@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Global, css, connect, styled, Head } from 'frontity'
 import Header from './header'
 import List from './list'
+import BlogList from './blog-list'
 import Post from './post'
 import Page404 from './page404.js'
 import Loading from './loading'
@@ -28,6 +29,8 @@ const Theme = ({ state }) => {
         // Get the data of the post.
         description = state.source[data.type][data.id].short_description
     }
+
+    // console.log(data, state.router.link)
 
     return (
         <>
@@ -61,6 +64,7 @@ const Theme = ({ state }) => {
       on the type of URL we are in. */}
             <Content>
                 {(data.isFetching && <Loading />) ||
+                    (data.isBlog && <BlogList />) ||
                     (data.isArchive && <List />) ||
                     (data.isPostType && <Post />) ||
                     (data.is404 && <Page404 />)}
@@ -73,6 +77,7 @@ export default connect(Theme)
 
 const globalStyles = css`
     body {
+        font-size: 20px;
         background: white;
         color: rgb(51, 51, 51);
         margin: 0;
@@ -83,8 +88,18 @@ const globalStyles = css`
     }
     a,
     a:visited {
-        color: inherit;
-        text-decoration: none;
+        color: #3ae17e;
+        text-decoration: underline;
+    }
+    h2 {
+        margin-top: 80px;
+        font-family: Merriweather, Georgia, serif;
+    }
+    hr {
+        background-color: #d1d1d1;
+        border: 0;
+        height: 1px;
+        margin: 0 0 1.75em;
     }
 `
 

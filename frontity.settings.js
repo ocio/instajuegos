@@ -14,7 +14,7 @@ const settings = {
                         ['Todos', '/'],
                         ['Nuevos', '/tag/nuevos/'],
                         ['Mas Populares', '/tag/populares/'],
-                        ['Blog', 'https://blog.tusjuegos.io/category/articulo/']
+                        ['Blog', '/blog/']
                     ],
                     featured: {
                         showOnList: false,
