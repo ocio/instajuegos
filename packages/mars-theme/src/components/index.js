@@ -64,7 +64,7 @@ const Theme = ({ state }) => {
       on the type of URL we are in. */}
             <Content>
                 {(data.isFetching && <Loading />) ||
-                    (data.isBlog && <BlogList />) ||
+                    (data.isBlogList && <BlogList />) ||
                     (data.isArchive && <List />) ||
                     (data.isPostType && <Post />) ||
                     (data.is404 && <Page404 />)}

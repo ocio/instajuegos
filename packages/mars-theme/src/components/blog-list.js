@@ -3,9 +3,7 @@ import { connect, styled } from 'frontity'
 import Item from './blog-list-item'
 import Pagination from './list/pagination'
 
-const BlogList = () => {
-    // Get the data of the current list.
-    const state = window.frontity.state
+const BlogList = ({ state }) => {
     const items = Object.keys(state.source.post).map(
         id => state.source.post[id]
     )
@@ -14,7 +12,6 @@ const BlogList = () => {
         <Container>
             {items
                 .filter(({ type, id }) => {
-                    return true
                     const item = state.source[type][id]
                     return item.categories[0] === 2
                 })

@@ -2,19 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.2",
-  "hash": "6669a04e12ba3dec56f8",
+  "hash": "bf285023bdc7d18c25b3",
   "publicPath": "/static/",
   "outputPath": "/mnt/c/Users/enzo/drive/projects/tusjuegos/build/static",
   "assetsByChunkName": {
     "TusJuegos.io": [
       "TusJuegos.io.module.js",
-      "TusJuegos.io.0f3d38db74643317c16b.hot-update.js"
+      "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
     ],
     "list": "list.module.js"
   },
   "assets": [
     {
-      "name": "0f3d38db74643317c16b.hot-update.json",
+      "name": "7dd0ecce624ba797edd1.hot-update.json",
       "size": 54,
       "chunks": [],
       "chunkNames": [],
@@ -25,8 +25,8 @@
       "emitted": false
     },
     {
-      "name": "TusJuegos.io.0f3d38db74643317c16b.hot-update.js",
-      "size": 10847,
+      "name": "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js",
+      "size": 10263,
       "chunks": [
         "TusJuegos.io"
       ],
@@ -41,7 +41,7 @@
     },
     {
       "name": "TusJuegos.io.module.js",
-      "size": 5462216,
+      "size": 5463236,
       "chunks": [
         "TusJuegos.io"
       ],
@@ -112,7 +112,7 @@
       ],
       "assets": [
         "TusJuegos.io.module.js",
-        "TusJuegos.io.0f3d38db74643317c16b.hot-update.js"
+        "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -125,7 +125,7 @@
       ],
       "assets": [
         "TusJuegos.io.module.js",
-        "TusJuegos.io.0f3d38db74643317c16b.hot-update.js"
+        "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

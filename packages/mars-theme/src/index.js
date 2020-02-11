@@ -1,10 +1,14 @@
 import Theme from './components'
 import image from '@frontity/html2react/processors/image'
 
-const blogHandler = {
+const blogListHandler = {
     pattern: '/blog/',
-    func: ({ state }) => {
-        state.source.data['/blog/'].isBlog = true
+    func: async ({ route, params, state, libraries }) => {
+        state.source.data['/blog/'].isBlogList = true
+        const archive = libraries.source.handlers.find(
+            handler => handler.name == 'post archive'
+        )
+        await archive.func({ route, params, state, libraries })
     }
 }
 
@@ -31,7 +35,7 @@ const marsTheme = {
     actions: {
         theme: {
             init: ({ libraries }) => {
-                libraries.source.handlers.push(blogHandler)
+                libraries.source.handlers.push(blogListHandler)
             }
         }
     },
