@@ -15,11 +15,9 @@ const Item = ({ state, item }) => {
                     dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                 />
             </Link>
-            <Link path={author.link}>
-                <Author>
-                    By <b>{author.name}</b>
-                </Author>
-            </Link>
+            <Author>
+                By <b>{author.name}</b>
+            </Author>
             <Fecha>
                 {' '}
                 on <b>{date.toDateString()}</b>
@@ -36,8 +34,8 @@ const Item = ({ state, item }) => {
 
 export default connect(Item)
 
-const Container = styled.li`
-    margin-bottom: 24px;
+const Container = styled.div`
+    margin-bottom: 100px;
 `
 
 const Title = styled.h1`
@@ -45,6 +43,10 @@ const Title = styled.h1`
     margin: 0;
     margin-top: 24px;
     margin-bottom: 8px;
+
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
 `
 
 const Author = styled.p`

@@ -2,19 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.2",
-  "hash": "bf285023bdc7d18c25b3",
+  "hash": "c04c69083dbacfd051d1",
   "publicPath": "/static/",
   "outputPath": "/mnt/c/Users/enzo/drive/projects/tusjuegos/build/static",
   "assetsByChunkName": {
     "TusJuegos.io": [
       "TusJuegos.io.module.js",
-      "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
+      "TusJuegos.io.7c4c342154a6d6db4138.hot-update.js"
     ],
     "list": "list.module.js"
   },
   "assets": [
     {
-      "name": "7dd0ecce624ba797edd1.hot-update.json",
+      "name": "7c4c342154a6d6db4138.hot-update.json",
       "size": 54,
       "chunks": [],
       "chunkNames": [],
@@ -25,8 +25,8 @@
       "emitted": false
     },
     {
-      "name": "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js",
-      "size": 10263,
+      "name": "TusJuegos.io.7c4c342154a6d6db4138.hot-update.js",
+      "size": 10579,
       "chunks": [
         "TusJuegos.io"
       ],
@@ -41,7 +41,7 @@
     },
     {
       "name": "TusJuegos.io.module.js",
-      "size": 5463236,
+      "size": 5463378,
       "chunks": [
         "TusJuegos.io"
       ],
@@ -57,7 +57,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "images/fullscreen.png",
@@ -65,7 +65,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "images/loading.gif",
@@ -73,7 +73,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "images/logo.png",
@@ -81,7 +81,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "images/search.png",
@@ -89,7 +89,7 @@
       "chunks": [],
       "chunkNames": [],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "list.module.js",
@@ -101,7 +101,7 @@
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,
@@ -112,7 +112,7 @@
       ],
       "assets": [
         "TusJuegos.io.module.js",
-        "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
+        "TusJuegos.io.7c4c342154a6d6db4138.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -125,7 +125,7 @@
       ],
       "assets": [
         "TusJuegos.io.module.js",
-        "TusJuegos.io.7dd0ecce624ba797edd1.hot-update.js"
+        "TusJuegos.io.7c4c342154a6d6db4138.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

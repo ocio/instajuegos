@@ -11,6 +11,8 @@ const BlogList = ({ state }) => {
     return items ? (
         <Container>
             {items
+                .slice(0)
+                // .sort((a, b) => a - b)
                 .filter(({ type, id }) => {
                     const item = state.source[type][id]
                     return item.categories[0] === 2
@@ -19,7 +21,7 @@ const BlogList = ({ state }) => {
                     const item = state.source[type][id]
                     return <Item key={item.id} item={item} state={state} />
                 })}
-            <Pagination />
+            {/* <Pagination /> */}
         </Container>
     ) : null
 }
@@ -27,10 +29,10 @@ const BlogList = ({ state }) => {
 export default connect(BlogList)
 
 const Container = styled.ul`
-    width: 800px;
+    max-width: 900px;
     margin: 0;
     padding: 24px;
-    list-style: none;
+    margin: 100px auto 0 auto;
 `
 
 const Header = styled.h3`
