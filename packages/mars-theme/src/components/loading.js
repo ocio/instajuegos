@@ -1,22 +1,13 @@
-import React from "react";
-import { styled } from "frontity";
-import Loader from "react-spinners/ScaleLoader";
+import React from 'react'
+import { styled } from 'frontity'
+import Loader from 'react-spinners/ScaleLoader'
+const Loading = () => <Container></Container>
 
-const Loading = () => (
-  <Container>
-    <Loader radius={0} margin="3px" width={4} height={24} />
-  </Container>
-);
-
-export default Loading;
+export default Loading
 
 const Container = styled.div`
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & > * {
-    margin-top: 24px;
-  }
-`;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url('/static/images/loading.gif') no-repeat center center / 64px;
+`

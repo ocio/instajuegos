@@ -100,6 +100,7 @@ const PictureContainer = styled.div`
 `
 
 const Text = styled.div`
+    color: #333;
     padding: 12px 10px 15px 10px;
 `
 

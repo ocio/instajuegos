@@ -5,11 +5,13 @@ import Link from './link'
 const Nav = ({ state }) => {
     return (
         <Container>
-            {state.theme.menu.map(([name, link]) => (
-                <Item key={name} isSelected={state.router.link === link}>
-                    <Link link={link}>{name}</Link>
-                </Item>
-            ))}
+            {state.theme.menu.map(([name, link]) => {
+                return (
+                    <Item key={name} isSelected={state.router.link === link}>
+                        <Link link={link}>{name}</Link>
+                    </Item>
+                )
+            })}
         </Container>
     )
 }
@@ -43,13 +45,14 @@ const Item = styled.div`
     border-radius: 20px;
     font-size: 16px;
     font-weight: 700;
-    color: ${({ isSelected }) => (isSelected ? '#333' : '#8e8e8e')};
     box-sizing: border-box;
     background-color: ${({ isSelected }) =>
         isSelected ? '#45ff91' : 'transparent'};
 
     & > a {
+        color: ${({ isSelected }) => (isSelected ? '#333' : '#8e8e8e')};
         outline: none;
+        text-decoration: none;
         display: inline-block;
         line-height: 2em;
     }
