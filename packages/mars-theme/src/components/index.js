@@ -51,6 +51,11 @@ const Theme = ({ state }) => {
             <Head>
                 <meta name="description" content={description} />
                 <html lang="es" />
+                <script
+                    data-ad-client="ca-pub-7429451379839231"
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                ></script>
             </Head>
 
             {/* Add some global styles for the whole site, like body or a's. 
@@ -86,8 +91,10 @@ const globalStyles = css`
             Helvetica Neue, Helvetica, Meiryo, Arial, sans-serif,
             Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     }
-    a,
-    a:visited {
+    a {
+        color: rgba(12, 17, 43);
+    }
+    a:hover {
         color: #3ae17e;
         text-decoration: underline;
     }

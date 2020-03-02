@@ -22,7 +22,8 @@ const Container = styled.nav`
     position: fixed;
     z-index: 1;
     top: 69px;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(250, 250, 250, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +51,7 @@ const Item = styled.div`
         isSelected ? '#45ff91' : 'transparent'};
 
     & > a {
-        color: ${({ isSelected }) => (isSelected ? '#333' : '#8e8e8e')};
+        color: ${({ isSelected }) => (isSelected ? '#333' : 'rgba(12,17,43)')};
         outline: none;
         text-decoration: none;
         display: inline-block;

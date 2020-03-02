@@ -169,7 +169,7 @@ const Tag = styled.div`
     border-radius: 20px;
     font-size: 16px;
     font-weight: 700;
-    color: ${({ isSelected }) => (isSelected ? '#333' : '#8e8e8e')};
+    color: ${({ isSelected }) => (isSelected ? '#333' : 'rgba(12,17,43)')};
     box-sizing: border-box;
     background-color: #eeeeee;
 

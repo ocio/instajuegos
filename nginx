@@ -1,6 +1,11 @@
 server {
-    listen         80;
-    server_name    tusjuegos.io www.tusjuegos.io;
+    listen 80;
+    server_name www.tusjuegos.io;
+    rewrite ^(.*) http://tusjuegos.io$1 permanent;
+}
+
+server {
+    server_name    tusjuegos.io;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -9,11 +14,27 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_buffering off;
     }
+
+    listen 80; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/tusjuegos.io/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/tusjuegos.io/privkey.pem; # managed by Certbot
+    #include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    server_name tusjuegos.io www.tusjuegos.io;
+
+    listen 443 ssl; # managed by Certbot
+    rewrite ^(.*) http://tusjuegos.io$1 permanent;
+
+    ssl_certificate /etc/letsencrypt/live/tusjuegos.io/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/tusjuegos.io/privkey.pem; # managed by Certb$    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 # https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
 server {
-    listen 80;
     server_name blog.tusjuegos.io;
 
     index index.php;
@@ -22,9 +43,19 @@ server {
     #access_log /home/ubuntu/tusjuegos/access.log;
     error_log /home/ubuntu/tusjuegos/error.log;
 
-    location / {
+    location /wp-admin {
         try_files $uri $uri/ /index.php?q=$uri&$args;
-    }    
+    }
+
+    location /wp-json {
+        try_files $uri $uri/ /index.php?q=$uri&$args;
+    }
+
+    rewrite ^(.*) http://tusjuegos.io$1;
+
+    #location ~* ^/([a-zA-Z0-9\-]/?)$ {
+    #    proxy_pass http://tusjuegos.io/$1;
+    #}
 
     location ~* \.php$ {
         fastcgi_pass unix:/run/php/php7.2-fpm.sock;
@@ -32,4 +63,22 @@ server {
         fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
         fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
     }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/tusjuegos.io/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/tusjuegos.io/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+server {
+    if ($host = blog.tusjuegos.io) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name blog.tusjuegos.io;
+    return 404; # managed by Certbot
 }

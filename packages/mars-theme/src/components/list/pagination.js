@@ -30,13 +30,13 @@ const Pagination = ({ state, actions, libraries }) => {
         <Container>
             {isThereNextPage && (
                 <Link link={nextPageLink}>
-                    <Text>← Mas Juegos</Text>
+                    <Text>Mas Juegos →</Text>
                 </Link>
             )}
             {isTherePreviousPage && isThereNextPage && ' - '}
             {isTherePreviousPage && (
                 <Link link={prevPageLink}>
-                    <Text>Mas Juegos →</Text>
+                    <Text>← Menos Juegos</Text>
                 </Link>
             )}
         </Container>

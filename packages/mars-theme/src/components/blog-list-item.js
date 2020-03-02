@@ -39,7 +39,6 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-    color: rgba(12, 17, 43);
     margin: 0;
     margin-top: 24px;
     margin-bottom: 8px;
