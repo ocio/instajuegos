@@ -7,20 +7,24 @@ const BlogList = ({ state }) => {
     const items = Object.keys(state.source.post).map(
         id => state.source.post[id]
     )
-    console.log(items.length)
+    const filteredItems = items
+        .slice(0)
+        // .sort((a, b) => a - b)
+        .filter(({ type, id }) => {
+            const item = state.source[type][id]
+            return item.categories[0] === 2
+        })
+        .map(({ type, id }) => {
+            const item = state.source[type][id]
+            return <Item key={item.id} item={item} state={state} />
+        })
+    console.log(
+        'Total items: ' + items.length,
+        'Filtered items: ' + filteredItems.length
+    )
     return items ? (
         <Container>
-            {items
-                .slice(0)
-                // .sort((a, b) => a - b)
-                .filter(({ type, id }) => {
-                    const item = state.source[type][id]
-                    return item.categories[0] === 2
-                })
-                .map(({ type, id }) => {
-                    const item = state.source[type][id]
-                    return <Item key={item.id} item={item} state={state} />
-                })}
+            {filteredItems}
             {/* <Pagination /> */}
         </Container>
     ) : null
