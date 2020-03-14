@@ -3,7 +3,7 @@ import { connect, styled } from 'frontity'
 import Item from './blog-list-item'
 // import Pagination from './list/pagination'
 
-const BlogList = ({ state }) => {
+const BlogList = ({ state, libraries }) => {
     const items = Object.keys(state.source.post).map(
         id => state.source.post[id]
     )
@@ -22,6 +22,37 @@ const BlogList = ({ state }) => {
         'Total items: ' + items.length,
         'Filtered items: ' + filteredItems.length
     )
+    ;(async () => {
+        // const response = await libraries.source.api.get({
+        //     endpoint: 'posts',
+        //     params: {
+        //         per_page: 100
+        //     }
+        // })
+        // const pages = libraries.source.getTotalPages(response)
+        // console.log(pages)
+        // await libraries.source.populate({ state, response })
+        // const requests = []
+        // for (let page = 2; page <= pages; page++) {
+        //     requests.push(
+        //         libraries.source.api.get({
+        //             enpoint: 'posts',
+        //             params: {
+        //                 per_page: 100,
+        //                 page
+        //             }
+        //         })
+        //     )
+        // }
+        // const responses = await Promise.all(requests)
+        // const result = await Promise.all(
+        //     responses.map(response =>
+        //         libraries.source.populate({ state, response })
+        //     )
+        // )
+        // console.log({ result, responses })
+    })()
+
     return items ? (
         <Container>
             {filteredItems}

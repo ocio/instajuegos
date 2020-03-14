@@ -3,6 +3,7 @@ import { connect, styled } from 'frontity'
 import Link from '../link'
 import FeaturedMedia from '../featured-media'
 import loadingIco from '../../../../../static/images/loading.gif'
+import { replaceBlog } from '../../helpers'
 
 const width = 250
 const height = 144
@@ -58,7 +59,7 @@ const Item = ({ state, item }) => {
                 <Text>
                     <Title
                         dangerouslySetInnerHTML={{
-                            __html: item.title.rendered
+                            __html: replaceBlog(item.title.rendered)
                         }}
                     />
                     <Tag>{tags}</Tag>

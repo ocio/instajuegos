@@ -3,6 +3,7 @@ import { connect, styled } from 'frontity'
 import * as frontity from 'frontity'
 import Link from './link'
 import FeaturedMedia from './featured-media'
+import { replaceBlog } from '../helpers'
 
 const Item = ({ state, item }) => {
     const author = state.source.author[item.author]
@@ -26,7 +27,9 @@ const Item = ({ state, item }) => {
                 <FeaturedMedia id={item.featured_media} />
             )}
             <Excerpt
-                dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+                dangerouslySetInnerHTML={{
+                    __html: replaceBlog(item.excerpt.rendered)
+                }}
             />
         </Container>
     )
