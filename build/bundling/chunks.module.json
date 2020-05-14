@@ -1,0 +1,152 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.2",
+  "hash": "20e9936a0ca489dc66ec",
+  "publicPath": "/static/",
+  "outputPath": "/mnt/c/Users/enzo/drive/projects/tusjuegos/build/static",
+  "assetsByChunkName": {
+    "TusJuegos.io": [
+      "TusJuegos.io.module.js",
+      "TusJuegos.io.e525569173ad8676cdbd.hot-update.js"
+    ],
+    "list": "list.module.js"
+  },
+  "assets": [
+    {
+      "name": "TusJuegos.io.e525569173ad8676cdbd.hot-update.js",
+      "size": 19356,
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "chunkNames": [
+        "TusJuegos.io"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "TusJuegos.io.module.js",
+      "size": 5479957,
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "chunkNames": [
+        "TusJuegos.io"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "e525569173ad8676cdbd.hot-update.json",
+      "size": 54,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/back.png",
+      "size": 1851,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/fullscreen.png",
+      "size": 2274,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/loading.gif",
+      "size": 82544,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/logo.png",
+      "size": 19616,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/search.png",
+      "size": 3748,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 110554,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "TusJuegos.io": {
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "assets": [
+        "TusJuegos.io.module.js",
+        "TusJuegos.io.e525569173ad8676cdbd.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "TusJuegos.io": {
+      "chunks": [
+        "TusJuegos.io"
+      ],
+      "assets": [
+        "TusJuegos.io.module.js",
+        "TusJuegos.io.e525569173ad8676cdbd.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

@@ -31,6 +31,7 @@ const Theme = ({ state }) => {
     }
 
     // console.log(data, state.router.link)
+    // console.log(data.isBlogList, data.isArchive)
 
     return (
         <>
@@ -57,14 +58,11 @@ const Theme = ({ state }) => {
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
                 ></script>
             </Head>
-
             {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
             <Global styles={globalStyles} />
-
             {/* Add the header of the site. */}
             <Header />
-
             {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
             <Content>

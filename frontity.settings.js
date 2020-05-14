@@ -3,7 +3,7 @@ const settings = {
     state: {
         title: 'Tus Juegos IO',
         description:
-            'Tus Juegos IO cada dia. Ingresa y juega a los últimos juegos io, puedes buscar en diferentes categorías, suscribite para recibir alertas cuando se publiquen nuevos juegos io, chatea con tus amigos y mucho más. ¡Tenemos la lista más completa y cada día añadimos más juegos, ingresa y divertete! :)'
+            'Tus Juegos IO cada dia. Ingresa y juega a los últimos juegos io, puedes buscar en diferentes categorías, suscribite para recibir alertas cuando se publiquen nuevos juegos io, chatea con tus amigos y mucho más. ¡Tenemos la lista más completa y cada día añadimos más juegos, ingresa y divertete! :)',
     },
     packages: [
         {
@@ -14,14 +14,14 @@ const settings = {
                         ['Todos', '/'],
                         ['Nuevos', '/tag/nuevos/'],
                         ['Mas Populares', '/tag/populares/'],
-                        ['Blog', '/blog/']
+                        ['Blog', '/blog/'],
                     ],
                     featured: {
                         showOnList: false,
-                        showOnPost: false
-                    }
-                }
-            }
+                        showOnPost: false,
+                    },
+                },
+            },
         },
         {
             name: '@frontity/wp-source',
@@ -34,14 +34,14 @@ const settings = {
 
                     params: {
                         per_page: 50,
-                        type: ['post', 'page']
-                    }
-                }
-            }
+                        type: ['post', 'page'],
+                    },
+                },
+            },
         },
         '@frontity/tiny-router',
-        '@frontity/html2react'
-    ]
+        '@frontity/html2react',
+    ],
 }
 
 export default settings
